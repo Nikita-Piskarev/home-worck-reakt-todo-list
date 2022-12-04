@@ -1,0 +1,61 @@
+@import "../../common/styles/variables";
+
+.section {
+  width: 450px;
+  border-radius: 8px;
+  margin: 50px auto;
+  padding: 20px 15px;
+  background-color: $bg-color-section;
+}
+.wraperInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  width: 350px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2px solid $bor-color-input;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+.ul {
+  margin-top: 50px;
+}
+.li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  color: $text-color-li;
+  background-color: $bg-color-li;
+  border-color: $bor-color-li;
+  border-radius: 4px;
+  line-height: 20px;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+.btnAdd {
+  width: 50px;
+  height: 40px;
+  color: white;
+  background-color: $btn-bg-color-add;
+  border-radius: 5px;
+  border: none;
+}
+
+.btnDel {
+  width: 30px;
+  height: 30px;
+  background-image: url(../../icon/icons8-delete.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-color: $btn-bg-color-del;
+  border-radius: 5px;
+  border: none;
+}
