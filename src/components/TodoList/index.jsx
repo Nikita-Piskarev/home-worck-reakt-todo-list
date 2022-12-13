@@ -13,7 +13,6 @@ const TodoList = (props) => {
 
   const handelState = ({ target: { value } }) =>
     dispatch({ type: "text", payload: value });
-
   return (
     <section className={styles.section}>
       <section className={styles.wraperInput}>
@@ -30,7 +29,7 @@ const TodoList = (props) => {
         </button>
       </section>
 
-      <Lists props={state.list} dispatch={dispatch}></Lists>
+      <Lists message={state.list} dispatch={dispatch}></Lists>
     </section>
   );
 };
