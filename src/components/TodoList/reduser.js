@@ -1,11 +1,13 @@
 import { initialState } from "./index";
+import { CONSTANS_TYPE } from "../../constans";
+
 export default function reducer(state, action) {
   switch (action.type) {
-    case "text": {
+    case CONSTANS_TYPE.TYPE_INPUT_TEXT: {
       const newState = { ...state, message: action.payload };
       return newState;
     }
-    case "isDone": {
+    case CONSTANS_TYPE.TYPE_IS_DONE_LIST: {
       const doneList = state.list.map((list) => ({
         ...list,
         isDone: list.id === action.payload ? !list.isDone : list.isDone,
@@ -18,7 +20,7 @@ export default function reducer(state, action) {
       return newState;
     }
 
-    case "saveMessage": {
+    case CONSTANS_TYPE.TYPE_ADD_LIST: {
       const newMessage = state.message === "" ? "Note is empty" : state.message;
       const list = { text: newMessage, isDone: false, id: Date.now() };
       const newState = {
@@ -28,7 +30,7 @@ export default function reducer(state, action) {
 
       return newState;
     }
-    case "deleteList": {
+    case CONSTANS_TYPE.TYPE_DEL_LIST: {
       const newList = state.list.filter((_, index) => index !== action.payload);
 
       const newState = {

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../TodoList.module.scss";
+import { CONSTANS_TYPE } from "../../../constans";
 
 const Lists = (props) => {
   const { message, dispatch } = props;
@@ -12,12 +13,14 @@ const Lists = (props) => {
         id={value.id}
         checked={value.isDone}
         onChange={({ target: { id } }) =>
-          dispatch({ type: "isDone", payload: +id })
+          dispatch({ type: CONSTANS_TYPE.TYPE_IS_DONE_LIST, payload: +id })
         }
       />
       <button
         className={styles.btnDel}
-        onClick={() => dispatch({ type: "deleteList", payload: index })}
+        onClick={() =>
+          dispatch({ type: CONSTANS_TYPE.TYPE_DEL_LIST, payload: index })
+        }
       ></button>
     </li>
   ));

@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import Lists from "./Lists";
 import styles from "./TodoList.module.scss";
 import reducer from "./reduser";
+import { CONSTANS_TYPE } from "../../constans";
 
 export const initialState = {
   message: "",
@@ -12,7 +13,7 @@ const TodoList = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const handelState = ({ target: { value } }) =>
-    dispatch({ type: "text", payload: value });
+    dispatch({ type: CONSTANS_TYPE.TYPE_INPUT_TEXT, payload: value });
   return (
     <section className={styles.section}>
       <section className={styles.wraperInput}>
@@ -23,7 +24,7 @@ const TodoList = (props) => {
         />
         <button
           className={styles.btnAdd}
-          onClick={() => dispatch({ type: "saveMessage" })}
+          onClick={() => dispatch({ type: CONSTANS_TYPE.TYPE_ADD_LIST })}
         >
           Add
         </button>
