@@ -4,9 +4,10 @@ import { CONSTANS_TYPE } from "../../constans";
 export default function reducer(state, action) {
   switch (action.type) {
     case CONSTANS_TYPE.TYPE_INPUT_TEXT: {
-      const newState = { ...state, message: action.payload };
+      const newState = { ...state, taskText: action.payload };
       return newState;
     }
+
     case CONSTANS_TYPE.TYPE_IS_DONE_LIST: {
       const doneList = state.list.map((list) => ({
         ...list,
@@ -21,8 +22,10 @@ export default function reducer(state, action) {
     }
 
     case CONSTANS_TYPE.TYPE_ADD_LIST: {
-      const newMessage = state.message === "" ? "Note is empty" : state.message;
-      const list = { text: newMessage, isDone: false, id: Date.now() };
+      const newTask = state.taskText === "" ? "Note is empty" : state.taskText;
+
+      const list = { text: newTask, isDone: false, id: Date.now() };
+
       const newState = {
         ...initialState,
         list: [...state.list, list],

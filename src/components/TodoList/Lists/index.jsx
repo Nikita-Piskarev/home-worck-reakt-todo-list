@@ -3,9 +3,9 @@ import styles from "../TodoList.module.scss";
 import { CONSTANS_TYPE } from "../../../constans";
 
 const Lists = (props) => {
-  const { message, dispatch } = props;
+  const { list, dispatch } = props;
 
-  const messageLists = message.map((value, index) => (
+  const TaskLists = list.map((value, index) => (
     <li className={styles.li} key={value.id}>
       <p>{value.text}</p>
       <input
@@ -25,7 +25,7 @@ const Lists = (props) => {
     </li>
   ));
 
-  return <ul className={styles.ul}>{messageLists}</ul>;
+  return <ul className={styles.ul}>{TaskLists}</ul>;
 };
 
 export default Lists;

@@ -5,7 +5,7 @@ import reducer from "./reduser";
 import { CONSTANS_TYPE } from "../../constans";
 
 export const initialState = {
-  message: "",
+  taskText: "",
   list: [],
 };
 
@@ -19,7 +19,7 @@ const TodoList = (props) => {
       <section className={styles.wraperInput}>
         <input
           className={styles.input}
-          value={state.message}
+          value={state.taskText}
           onChange={handelState}
         />
         <button
@@ -30,7 +30,7 @@ const TodoList = (props) => {
         </button>
       </section>
 
-      <Lists message={state.list} dispatch={dispatch}></Lists>
+      <Lists list={state.list} dispatch={dispatch}></Lists>
     </section>
   );
 };
