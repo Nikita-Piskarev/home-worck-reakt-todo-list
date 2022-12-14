@@ -7,7 +7,6 @@ const Lists = (props) => {
 
   const TaskLists = list.map((value, index) => (
     <li className={styles.li} key={value.id}>
-      <p>{value.text}</p>
       <input
         type="checkbox"
         id={value.id}
@@ -16,6 +15,8 @@ const Lists = (props) => {
           dispatch({ type: CONSTANS_TYPE.TYPE_IS_DONE_LIST, payload: +id })
         }
       />
+      <p>{value.text}</p>
+
       <button
         className={styles.btnDel}
         onClick={() =>
